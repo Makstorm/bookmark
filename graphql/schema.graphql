@@ -1,0 +1,23 @@
+type Book {
+  author: String!
+  id: ID!
+  title: String!
+}
+
+input BookInput {
+  author: String!
+  id: ID
+  title: String!
+}
+
+type Mutation {
+  createBook(book: BookInput!): Book
+}
+
+type Query {
+  listBooks: [Book]
+}
+
+type Subscription {
+  onCreateBook: Book
+}
